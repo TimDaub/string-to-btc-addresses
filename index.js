@@ -48,7 +48,7 @@ var splitHexIntoChunks = function(hexArray, addressLength) {
   // check last chunk for completion
   // fill with zeros
   var lastChunk = chunks[chunks.length-1];
-  var j = lastChunk.length-1;
+  var j = lastChunk.length;
   while(lastChunk.length < addressLength) {
     lastChunk[j] = '00';
     j++;
