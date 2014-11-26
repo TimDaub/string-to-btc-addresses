@@ -9,7 +9,7 @@ this is so romantic :heart:
 In order to use the script do this:
 
 ```
-1. npm install string-to-btc-addresses --save-dev
+npm install string-to-btc-addresses --save-dev
 ```
 
 
