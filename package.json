@@ -1,0 +1,21 @@
+{
+  "name": "encodeInBlockchain",
+  "version": "1.0.0",
+  "description": "A little programm that encodes a string into a parsable transaction that can be signed and put into the blockchain",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "bitcoin",
+    "blockchain",
+    "transaction",
+    "encode"
+  ],
+  "author": "= <=> (http://hondrt.de/)",
+  "license": "ISC",
+  "devDependencies": {
+    "base58-native": "^0.1.4",
+    "bignum": "^0.9.0"
+  }
+}
