@@ -9,7 +9,7 @@ This was inspired by [Ken Shirriff](http://www.righto.com/2014/02/ascii-bernanke
 
 This package can be found on [npm](https://www.npmjs.org/package/string-to-btc-addresses).
 
-In order to use the script do this:
+## Usage
 
 ```
 npm install string-to-btc-addresses --save-dev
