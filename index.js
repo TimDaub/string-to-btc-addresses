@@ -1,15 +1,11 @@
 var base58Check = require('base58-native').base58Check;
 var bignum = require('bignum');
 
-var config = require('./config.json');
-var assert = require('./assert.js');
-
-
-var encodeFromStringToAddress = function(s) {
+var encodeFromStringToAddress = function(s, addressLength) {
   var numbers = encodeFromStringToNumber(s);
   var hex = encodeFromDecToHex(numbers);
 
-  var chunks = splitHexIntoChunks(hex);
+  var chunks = splitHexIntoChunks(hex, addressLength);
 
   var addresses = encodeChunksToAddresses(chunks);
 
@@ -34,9 +30,16 @@ var encodeChunksToAddresses = function(chunks) {
 };
 
 // From: http://stackoverflow.com/a/8495740/1263876
-var splitHexIntoChunks = function(hexArray) {
-  var i, j, temparray, chunk = config.addressLength;
+// 
+// Default addresslength is 20
+var splitHexIntoChunks = function(hexArray, addressLength) {
+  var i, j, temparray, chunk;
   var chunks = [];
+
+  if(!addressLength) {
+    chunk = addressLength = 20;
+  }
+
   for(i = 0 , j = hexArray.length; i < j; i += chunk) {
     temparray = hexArray.slice(i, i + chunk);
     chunks.push(temparray);
@@ -46,7 +49,7 @@ var splitHexIntoChunks = function(hexArray) {
   // fill with zeros
   var lastChunk = chunks[chunks.length-1];
   var j = lastChunk.length-1;
-  while(lastChunk.length < config.addressLength) {
+  while(lastChunk.length < addressLength) {
     lastChunk[j] = '00';
     j++;
   }
@@ -81,22 +84,4 @@ var encodeFromDecToHex = function(numbers) {
 
 };
 
-// Itzy bitzy Assertion
-
-var addresses = encodeFromStringToAddress(config.encode);
-
-console.log();
-console.log();
-console.log('Addresses');
-console.log('---------');
-console.log(addresses);
-
-console.log();
-console.log();
-console.log();
-
-console.log('String');
-console.log('---------');
-console.log(assert.decodeFromAddressToString(addresses));
-console.log();
-console.log();
+module.exports.encode = encodeFromStringToAddress;

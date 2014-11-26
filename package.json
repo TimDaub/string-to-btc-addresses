@@ -1,10 +1,10 @@
 {
-  "name": "node-encode-text-in-blockchain",
-  "version": "1.0.0",
+  "name": "string-to-btc-addresses",
+  "version": "1.0.3",
   "description": "A little programm that encodes a string into a parsable transaction that can be signed and put into the blockchain",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node assert"
   },
   "keywords": [
     "bitcoin",
@@ -17,5 +17,17 @@
   "devDependencies": {
     "base58-native": "^0.1.4",
     "bignum": "^0.9.0"
-  }
+  },
+  "dependencies": {
+    "base58-native": "^0.1.4",
+    "bignum": "^0.9.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:TimDaub/string-to-btc-addresses.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TimDaub/string-to-btc-addresses/issues"
+  },
+  "homepage": "https://github.com/TimDaub/string-to-btc-addresses"
 }
