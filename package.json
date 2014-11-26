@@ -1,6 +1,6 @@
 {
   "name": "string-to-btc-addresses",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A little programm that encodes a string into a parsable transaction that can be signed and put into the blockchain",
   "main": "index.js",
   "scripts": {

@@ -1,5 +1,7 @@
 var base58Check = require('base58-native').base58Check;
 var bignum = require('bignum');
+var assert = require('./assert.js');
+
 
 var encodeFromStringToAddress = function(s, addressLength) {
   var numbers = encodeFromStringToNumber(s);
@@ -10,6 +12,17 @@ var encodeFromStringToAddress = function(s, addressLength) {
   var addresses = encodeChunksToAddresses(chunks);
 
   return addresses;
+};
+
+var decodeFromAddressToString = function(addressList) {
+  var text = [];
+
+  for(var i = 0; i < addressList.length; i++) {
+    text.push(base58Check.decode(addressList[i]).toString());
+  }
+
+  return text.join('');
+
 };
 
 var encodeChunksToAddresses = function(chunks) {
@@ -85,3 +98,4 @@ var encodeFromDecToHex = function(numbers) {
 };
 
 module.exports.encode = encodeFromStringToAddress;
+module.exports.decode = decodeFromAddressToString;

@@ -21,5 +21,9 @@ In your application:
 ```
 var stringToBtcAddresses = require('string-to-btc-addresses');
 
-console.log(stringToBtcAddresses.encode('this is so romantic :heart:'));
+var addresses = stringToBtcAddresses.encode('this is so romantic :heart:');
+var strings = stringToBtcAddresses.decode(addresses);
+
+console.log(addresses);
+console.log(strings);
 ```
