@@ -1,5 +1,5 @@
 {
-  "name": "encodeTextInBlockchain",
+  "name": "node-encode-text-in-blockchain",
   "version": "1.0.0",
   "description": "A little programm that encodes a string into a parsable transaction that can be signed and put into the blockchain",
   "main": "index.js",
